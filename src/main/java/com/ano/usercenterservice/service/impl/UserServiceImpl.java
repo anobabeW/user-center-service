@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.ano.usercenterservice.UserConstant.USER_LOGIN_STATE;
+import static com.ano.usercenterservice.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
 * @author wangjiao
@@ -129,6 +129,9 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
      */
     @Override
     public User getSafetyUser(User originUser) {
+        if(originUser == null) {
+            return null;
+        }
         User safetyUser = new User();
         safetyUser.setId(originUser.getId());
         safetyUser.setUserName(originUser.getUserName());

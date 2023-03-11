@@ -1,4 +1,4 @@
-package com.ano.usercenterservice;
+package com.ano.usercenterservice.constant;
 
 /**
  * @author wangjiao
